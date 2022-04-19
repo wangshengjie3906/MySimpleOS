@@ -1,2 +1,2 @@
-# MySingleOS
-To make a single OS as the OSASK.
+# MySimpleOS
+To make a simple OS like the OSASK.
