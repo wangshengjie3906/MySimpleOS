@@ -1,5 +1,7 @@
 ; haribote-os boot asm
 ; TAB=4
+; 此部分为操作系统功能，目前只有汇编实现的少量函数
+; 完成C语言文件的功能
 
 BOTPAK	EQU		0x00280000		; 加载bootpack
 DSKCAC	EQU		0x00100000		; 磁盘缓存的位置
@@ -63,6 +65,7 @@ VRAM	EQU		0x0ff8			; 图像缓冲区的起始地址
 		OR		EAX,0x00000001	; bit0到1转换（保护模式过渡）
 		MOV		CR0,EAX
 		JMP		pipelineflush
+
 pipelineflush:
 		MOV		AX,1*8			;  写32bit的段
 		MOV		DS,AX

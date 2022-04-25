@@ -60,6 +60,7 @@ haribote.img : ipl10.bin haribote.sys Makefile
 img :
 	$(MAKE) haribote.img
 
+# 执行
 run :
 	$(MAKE) img
 	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin

@@ -1,9 +1,11 @@
-void io_hlt(void);
-void io_cli(void);
-void io_out8(int port, int data);
-int io_load_eflags(void);
-void io_store_eflags(int eflags);
+/* 此部分函数在汇编中实现，编译最终会拼接到一起：naskfunc.nas */
+void io_hlt(void);                          // cpu空转
+void io_cli(void);                          // 停止中断响应
+void io_out8(int port, int data);   // 输出8位的内容到显卡
+int io_load_eflags(void);              // 加载状态
+void io_store_eflags(int eflags);  // 恢复中断响应处理
 
+/* 此部分函数在本文件实现 */
 void init_palette(void);
 void set_palette(int start, int end, unsigned char *rgb);
 void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, int x1, int y1);

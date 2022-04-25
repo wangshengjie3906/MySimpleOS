@@ -13,6 +13,8 @@
 
 [SECTION .text]
 
+; C语言调用的函数，需要以下划线开始，C语言那边函数定义时不带开头的下划线
+
 _io_hlt:	; void io_hlt(void);
 		HLT
 		RET
