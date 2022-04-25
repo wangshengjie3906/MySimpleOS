@@ -75,3 +75,4 @@ _io_store_eflags:	; void io_store_eflags(int eflags);
 		PUSH	EAX
 		POPFD		; POP EFLAGS 
 		RET
+
