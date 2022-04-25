@@ -25,6 +25,34 @@ VRAM	EQU		0x0ff8			; 图像缓冲区的起始地址
 		MOV		WORD [SCRNY],200
 		MOV		DWORD [VRAM],0x000a0000
 
+; 重新给颜色赋值，让显示更加突出
+
+		MOV    BX,DS    ; 保存 DS 状态
+		MOV    AX,0xa000
+		MOV    DS,AX
+		MOV    SI,0
+; 渐变效果，绘制三个区域，加上原来的，四个区域
+draw1:
+		MOV    [DS:SI], BYTE 0x12
+		ADD     SI,1
+        CMP     SI,320*50    ; 绘制区域，多少个像素
+		JBE       draw1
+
+draw2:
+		MOV    [DS:SI], BYTE 0x15
+		ADD     SI,1
+        CMP     SI,320*50*2    ; 绘制区域，多少个像素
+		JBE       draw2
+
+draw3:
+		MOV    [DS:SI], BYTE 0x7
+		ADD     SI,1
+        CMP     SI,320*50*3    ; 绘制区域，多少个像素
+		JBE       draw3
+
+		MOV    DS,BX      ; 恢复 DS 状态
+
+
 ; 通过BIOS获取指示灯状态
 
 		MOV		AH,0x02
