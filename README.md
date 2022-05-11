@@ -1,2 +1,3 @@
 # MySimpleOS
-To make a simple OS like the OSASK.
+以《30天自制操作系统》为主要参考书籍，制作一个类似于 OSASK 系统的简易操作系统，“麻雀虽小，五脏俱全”。
+

@@ -29,7 +29,7 @@ void boxfill8(unsigned char *vram, int xsize, unsigned char c, int x0, int y0, i
 
 void HariMain(void)
 {
-	char *vram;/* 声明变量vram、用于BYTE [...]地址 */
+	char *vram; /* 声明变量vram、用于BYTE [...]地址 */
 	int xsize, ysize;
 
 	init_palette();/* 设定调色板 */
